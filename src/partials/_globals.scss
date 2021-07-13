@@ -1,0 +1,50 @@
+@use './fonts';
+@use './variables' as *;
+@use './mixins' as *;
+
+html{
+	box-sizing: border-box;
+	font-size: 100%;
+	height:100%;
+	width:100%;
+	box-sizing: border-box;
+}
+*{
+	box-sizing: inherit;
+}
+body{
+	font-family: 'avenir';
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.mHeader{
+	@include mHeader();
+	font-family: 'avenirBold';
+	color:$black;
+}
+.mSubheader{
+	@include mSubheader();
+	font-family: 'avenirDemi';
+	color:$black;
+}
+.mParagraph{
+	@include mParagraph();
+	font-family: 'avenirRegular';
+	color:$black;
+}
+.mListsContactInfo{
+	@include mListsContactInfo();
+	font-family: 'avenirRegular';
+	color:$black;
+}
+.mLabels{
+	@include mLabels();
+	font-family: 'avenirBold';
+	color:$black;
+}
+.btn{
+}
+.btn:hover{
+}

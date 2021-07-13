@@ -1,0 +1,66 @@
+@use './variables' as *;
+//Media
+@mixin mobile(){
+	@media (min-width:320px){
+		@content;
+	}
+}
+@mixin tablet(){
+	@media (min-width:768px){
+		@content;
+	}
+}
+@mixin desktop(){
+	@media (min-width:1280px) {
+		@content;
+	}
+}
+//Typography
+@mixin mHeader(){
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+@mixin mSubheader(){
+	font-size: 0.875rem;
+	line-height: 1.375rem;
+}
+@mixin mParagraph(){
+	font-size: 0.813rem;
+	line-height: 1.125rem;
+}
+@mixin mListsContactInfo(){
+	font-size: 0.813rem;
+	line-height: 1.125rem;
+}
+@mixin mLabels(){
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+}
+@mixin dtHeroHeader(){
+	font-size: 3.75rem;
+	line-height: 4.25rem;
+}
+@mixin dtHeader(){
+	font-size: 3.25rem;
+	line-height: 2.75rem;
+}
+@mixin dtHeader2(){
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+@mixin dtSubheader(){
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+@mixin dtParagraph(){
+	font-size: 0.813rem;
+	line-height: 1.375rem;
+}
+@mixin dtListsContactInfo(){
+	font-size: 0.813rem;
+	line-height: 1.25rem;
+}
+@mixin dtLabels(){
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+}
