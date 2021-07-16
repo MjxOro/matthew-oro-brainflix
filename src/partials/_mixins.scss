@@ -1,4 +1,4 @@
-@use './variables' as *;
+@import './variables';
 //Media
 @mixin mobile(){
 	@media (min-width:320px){
@@ -63,4 +63,36 @@
 @mixin dtLabels(){
 	font-size: 0.75rem;
 	line-height: 1.25rem;
+}
+//buttons
+@mixin mButton(){
+	width: 14rem;
+	min-width: 14rem;
+	height: 3rem;
+	max-height: 3rem;
+	border-radius:0.25rem;
+	background-color: $brainflixBlue;
+	color: $white;
+	border: none;
+}
+//inputBox
+@mixin mInputBox($width,$height){
+	background-color: $alabaster;
+	min-width: 18rem;
+	width:$width;
+	height:$height;
+	padding-left:2.25rem;
+	border-radius:0.25rem;
+	border: 1px solid $mercury;
+
+}
+
+//profilePicture
+@mixin profilePicture{
+	min-width: 3rem;
+	max-width:3rem;
+	min-height:3rem;
+	max-height: 3rem;
+	border-radius: 50%;
+	background-color: $mercury;
 }

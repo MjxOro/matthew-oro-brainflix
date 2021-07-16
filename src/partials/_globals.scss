@@ -1,7 +1,6 @@
-@use './fonts';
-@use './variables' as *;
-@use './mixins' as *;
-
+@import './variables';
+@import './fonts';
+@import './mixins';
 html{
 	box-sizing: border-box;
 	font-size: 100%;

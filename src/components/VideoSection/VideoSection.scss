@@ -1,0 +1,36 @@
+@import '../../partials/variables';
+
+.video{
+	&__player{
+		margin:0;
+		width:100%;
+		min-height: 11.438rem;
+	}
+	&__control-wrapper{
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-end;
+	}
+	&__play{
+	}
+	&__length{
+	}
+	&__icon-wrapper{
+	}
+	&__fullscreen{
+	}
+	&__sound{
+	}
+	&__statistics{
+	}
+	&__views{
+	}
+	&__likes{
+	}
+	&__description{
+	}
+
+}
+.video > *:not(:first-child){
+		margin: 0 1rem;
+	}
