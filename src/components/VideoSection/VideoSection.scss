@@ -1,36 +1,71 @@
-@import '../../partials/variables';
+@use '../../partials/variables';
+@use '../../partials/mixins' as *;
 
 .video{
 	&__player{
 		margin:0;
 		width:100%;
-		min-height: 11.438rem;
+		min-height:11.438rem;
+		height: calc(11.438rem + 10vw);
+		object-fit: cover;
 	}
 	&__control-wrapper{
 		display: flex;
-		justify-content: space-evenly;
 		align-items: flex-end;
+		background-color: $black;
 	}
-	&__play{
+	&__info{
 	}
-	&__length{
+	&__title{
+		margin: 2rem 0 1rem 0;
 	}
-	&__icon-wrapper{
+	&__author{
+		display:flex;
+		margin-bottom:2rem;
 	}
-	&__fullscreen{
+	&__channel{
+		margin:0;
+		margin-right:0.5rem;
 	}
-	&__sound{
+	&__date{
+		margin: 0;
 	}
 	&__statistics{
+		display: flex;
+		margin-bottom:1.5rem;
+	}
+	&__views-icon{
+		content:"";
+		background-image:url('../../assets/images/Icons/Icon-views.svg');
+		background-position: auto;
+		background-repeat: no-repeat;
+		width:1.5rem;
+		height:1.5rem;
+		margin-right:0.5rem;
 	}
 	&__views{
+		margin:0;
+		margin-right: 2rem;
+		
+	}
+	&__likes-icon{
+		content:"";
+		background-image:url('../../assets/images/Icons/Icon-likes.svg');
+		background-position: auto;
+		background-repeat: no-repeat;
+		width:1.5rem;
+		height:1.5rem;
+		margin-right:0.5rem;
+
 	}
 	&__likes{
+		margin:0;
 	}
 	&__description{
+		@include mTopBorder;
 	}
 
 }
-.video > *:not(:first-child){
+.video > *:nth-child(n+2){
 		margin: 0 1rem;
 	}

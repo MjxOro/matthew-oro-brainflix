@@ -1,6 +1,6 @@
-@import "../../partials/mixins";
-@import "../../partials/variables";
-@import "../../partials/globals";
+@use "../../partials/variables";
+@use "../../partials/mixins" as *;
+@use "../../partials/globals";
 
 .header{
 

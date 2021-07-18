@@ -1,5 +1,4 @@
 @import './variables';
-//Media
 @mixin mobile(){
 	@media (min-width:320px){
 		@content;
@@ -15,7 +14,6 @@
 		@content;
 	}
 }
-//Typography
 @mixin mHeader(){
 	font-size: 1.5rem;
 	line-height: 2rem;
@@ -64,8 +62,7 @@
 	font-size: 0.75rem;
 	line-height: 1.25rem;
 }
-//buttons
-@mixin mButton(){
+@mixin mButton{
 	width: 14rem;
 	min-width: 14rem;
 	height: 3rem;
@@ -75,19 +72,21 @@
 	color: $white;
 	border: none;
 }
-//inputBox
 @mixin mInputBox($width,$height){
 	background-color: $alabaster;
-	min-width: 18rem;
 	width:$width;
 	height:$height;
 	padding-left:2.25rem;
 	border-radius:0.25rem;
-	border: 1px solid $mercury;
+	border: 0.125rem solid $mercury;
+	box-shadow:none;
+	-webkit-appearance: none;
 
 }
-
-//profilePicture
+@mixin mTopBorder{
+	border-top: 0.063rem solid $mercury;
+	padding-top:1.5rem;
+}
 @mixin profilePicture{
 	min-width: 3rem;
 	max-width:3rem;

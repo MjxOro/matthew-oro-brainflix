@@ -1,0 +1,76 @@
+@use '../../partials/variables';
+@use '../../partials/mixins' as *;
+@use '../../partials/globals';
+
+.comment{
+	margin: 0 1rem;
+	display:flex;
+	flex-direction: column;
+	&__header{
+	}
+	&__title{
+		color: $silver;
+		margin:0;
+		margin-left: 3.813rem;
+	}
+	&__post-wrapper{
+		display:flex;
+	}
+	&__form-wrapper{
+		flex-grow:1;
+	}
+	&__form{
+		display: flex;
+		flex-direction:column;
+	}
+	&__profile-picture{
+		@include profilePicture;
+		margin: 0;
+		margin-right: 1rem;
+		&--Mohan{
+			background-image: url('../../assets/images/Mohan-muruge.jpg');
+			background-size: cover;
+			background-position: 0 center;
+			background-repeat: no-repeat;
+		}
+	}
+	&__input{
+		@include mInputBox(100%,5rem);
+		padding:0.75rem;
+		resize:none;
+	}
+	&__input:focus{
+		outline-color: $brainflixBlue
+	}
+	&__input::placeholder{
+		color:$black;
+	}
+	&__btn{
+		@include mButton;
+		margin: 1rem 0 1.5rem 0;
+		width:inherit;
+	}
+	&__posted-wrapper{
+		@include mTopBorder;
+		display:flex;
+	}
+	&__profile-picture{
+	}
+	&__info-wrapper{
+	}
+	&__top-wrapper{
+		display:flex;
+		justify-content: space-between;
+		margin:0;
+	}
+	&__username{
+		margin:0;
+	}
+	&__date{
+		margin:0;
+	}
+	&__comment-post{
+	}
+
+
+}

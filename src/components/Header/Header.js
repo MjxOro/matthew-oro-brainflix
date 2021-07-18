@@ -1,15 +1,13 @@
 import './Header.scss';
-import React from 'react';
 import logoImg from '../../assets/images/Logo/Logo-brainflix.svg'
 
-class Header extends React.Component{
-	state = {
-		counter: 0,
-	};
-render = ()=>{
+function Header(props){
+	function clickHandler(e){
+		props.method(e.target.id);
+	}
 	return(
 			<header className='header'>
-				<figure className='header__logo-container'>
+				<figure className='header__logo-container' onClick={clickHandler}>
 					<a href='#' className='header__logo-link'>
 						<img className='header__logo' src={logoImg} alt='BrainFlix Logo' />
 					</a>
@@ -27,7 +25,6 @@ render = ()=>{
 					</form>
 				</div>
 			</header>);
-	};
 };
 
 export default Header;

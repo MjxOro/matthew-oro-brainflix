@@ -1,12 +1,10 @@
 import logo from './logo.svg';
 import './App.scss';
-import Header from './components/Header/Header';
 import Brainflix from './components/Brainflix/Brainflix';
 
 function App() {
   return (
     <div className="App">
-	  <Header />
 	  <Brainflix />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

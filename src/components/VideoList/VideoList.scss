@@ -1,0 +1,19 @@
+@use '../../partials/variables';
+@use '../../partials/mixins';
+
+.list{
+	&__title{
+	}
+	&__videos-wrapper{
+	}
+	&__videos{
+		width:7.5rem;
+		height:4.375rem;
+	}
+	&__text-wrapper{
+	}
+	&__video-title{
+	}
+	&__author{
+	}
+}
