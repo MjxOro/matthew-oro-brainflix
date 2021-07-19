@@ -3,8 +3,20 @@
 
 .list{
 	margin: 0 1rem;
+	@include tablet(){
+		margin: 0 1.5rem;
+	}
+	@include desktop(){
+		margin:0;
+		margin-right:11.25rem;
+	}
 	&__title{
+		@include mLabels();
+		color:$silver;
 		margin:2.5rem 0;
+		@include tablet(){
+			@include dtLabels();
+		}
 	}
 	&__videos-wrapper{
 		display:flex;
@@ -12,6 +24,10 @@
 		max-height:70px;
 		margin-right:1rem;
 		margin-bottom: 1.5rem;
+		cursor:pointer;
+		@include desktop(){
+			margin-bottom:1.75rem;
+		}
 	}
 	&__videos{
 		min-width: 7.5rem;
@@ -38,17 +54,25 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		@include tablet(){
+			@include dtSubheader();
 			width:14rem;
 			line-height: 1rem;
-			white-space: normal;
+			white-space: initial;
 			overflow: visible;
 			text-overflow: none;
+		}
+		@include desktop(){
+			width: 12rem;
 		}
 		
 	}
 	&__author{
+		@include mParagraph();
 		margin:0;
 		margin-bottom:0.5rem;
 		flex-grow:1;
+		@include tablet(){
+			@include dtParagraph();
+		}
 	}
 }

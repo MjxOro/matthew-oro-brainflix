@@ -3,20 +3,24 @@
 @use '../../partials/globals';
 
 .comment{
-	margin: 0 1rem;
 	display:flex;
 	flex-direction: column;
-	@include tablet(){
-		margin: 0 1.5rem;
-	}
+	border-bottom:0.063rem solid $mercury;
 	&__header{
+		@include mSubheader();
 		margin: 3.75rem 0 2rem 0;
-
+		@include tablet(){
+			@include dtSubheader();
+		}
 	}
 	&__title{
+		@include mLabels();
 		color: $silver;
 		margin:0;
 		margin-left: 3.813rem;
+		@include tablet(){
+			@include dtLabels();
+		}
 	}
 	&__post-wrapper{
 		display:flex;
@@ -48,13 +52,18 @@
 		}
 	}
 	&__input{
+		@include mParagraph();
 		@include mInputBox(100%,5rem);
 		padding:0.75rem;
 		resize:none;
 		@include tablet(){
-			padding: 0.9rem;
+			@include dtParagraph();
+			padding: 0.65rem;
 			height: 3rem;
 			width:27.5rem;
+		}
+		@include desktop(){
+			width:27.25rem;
 		}
 	}
 	&__input:focus{
@@ -64,20 +73,23 @@
 		color:$black;
 	}
 	&__btn{
+		@include mLabels();
 		@include mButton;
 		margin: 1rem 0 1.5rem 0;
 		width:inherit;
 		@include tablet(){
+			@include dtLabels();
 			width:10rem;
 			height: 3rem;
 			margin:0 2.5rem 0 1rem;
+		}
+		@include desktop(){
+			width:10.438rem;
 		}
 	}
 	&__posted-wrapper{
 		@include mTopBorder;
 		display:flex;
-	}
-	&__profile-picture{
 	}
 	&__info-wrapper{
 	}
@@ -85,15 +97,33 @@
 		display:flex;
 		justify-content: space-between;
 		margin:0;
+		@include desktop(){
+			justify-content: flex-start;
+		}
 	}
 	&__username{
+		@include mSubheader();
 		margin:0;
+		@include desktop(){
+			@include dtSubheader();
+			margin-right: 0.5rem;
+		}
 	}
 	&__date{
+		@include mParagraph();
 		margin:0;
+		color:$silver;
+		@include tablet(){
+			@include dtParagraph();
+		}
 	}
 	&__comment-post{
+		@include mParagraph();
 		max-width:39rem;
+		@include desktop(){
+			@include dtParagraph();
+			max-width:44.5rem;
+		}
 	}
 
 

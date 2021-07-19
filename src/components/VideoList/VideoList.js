@@ -11,7 +11,7 @@ export default function VideoList(props){
 	});
 	return(
 		<section className='list'>
-			<h2 className='list__title'>NEXT VIDEO</h2>
+			<h5 className='list__title'>NEXT VIDEO</h5>
 		{
 			videoArray.map(elem=>{
 				return(

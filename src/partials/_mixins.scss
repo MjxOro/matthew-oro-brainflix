@@ -70,9 +70,11 @@
 	background-color: $brainflixBlue;
 	color: $white;
 	border: none;
+	cursor: pointer;
 }
 @mixin mInputBox($width,$height){
 	background-color: $alabaster;
+	font-family: 'avenir';
 	width:$width;
 	height:$height;
 	padding-left:2.25rem;
