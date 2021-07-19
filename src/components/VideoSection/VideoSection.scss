@@ -5,23 +5,36 @@
 	&__player{
 		margin:0;
 		width:100%;
+		background-color: #000000;
 		min-height:11.438rem;
 		height: calc(11.438rem + 10vw);
 		object-fit: cover;
-	}
-	&__control-wrapper{
-		display: flex;
-		align-items: flex-end;
-		background-color: $black;
+		@include tablet(){
+			min-height: 25rem;
+			justify-content: center;
+			padding: 0 2.125rem;
+		}
 	}
 	&__info{
 	}
 	&__title{
 		margin: 2rem 0 1rem 0;
+		@include tablet(){
+			margin: 3rem 0 1.5rem 0;
+		}
+	}
+	&__bottom-wrapper{
+		@include tablet(){
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 	&__author{
 		display:flex;
 		margin-bottom:2rem;
+		@include tablet(){
+			margin-bottom:1.5rem;
+		}
 	}
 	&__channel{
 		margin:0;
@@ -56,6 +69,8 @@
 		width:1.5rem;
 		height:1.5rem;
 		margin-right:0.5rem;
+		@include tablet(){
+		}
 
 	}
 	&__likes{
@@ -63,9 +78,15 @@
 	}
 	&__description{
 		@include mTopBorder;
+		@include tablet(){
+			padding-top:2.5rem;
+		}
 	}
 
 }
 .video > *:nth-child(n+2){
 		margin: 0 1rem;
+		@include tablet(){
+			margin: 0 1.5rem;
+		}
 	}

@@ -18,7 +18,7 @@ export default function VideoList(props){
 					<div className='list__videos-wrapper' id={elem.id} onClick={clickHandler} name='videoList'>
 						<img className='list__videos' src={elem.image}/>
 						<div className='list__text-wrapper'>
-							<h2 className='list__video-title'>{elem.title}</h2>
+							<h3 className='list__video-title'>{elem.title}</h3>
 							<p className='list__author'>{elem.channel}</p>
 						</div>
 					</div>

@@ -13,8 +13,7 @@ function Header(props){
 					</a>
 				</figure>
 				<div className='header__form-container'>
-					<form className='header__form'>
-						<input className='header__input' placeholder='Search' />
+					  <input className='header__input' placeholder='Search' />
 						<div className='header__wrapper'>
 							<button className='header__btn'>
 								<i className='header__btn-icon'></i>
@@ -22,7 +21,6 @@ function Header(props){
 							</button>
 							<figure className='header__profile-picture'></figure>
 						</div>
-					</form>
 				</div>
 			</header>);
 };

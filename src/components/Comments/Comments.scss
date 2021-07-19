@@ -6,7 +6,12 @@
 	margin: 0 1rem;
 	display:flex;
 	flex-direction: column;
+	@include tablet(){
+		margin: 0 1.5rem;
+	}
 	&__header{
+		margin: 3.75rem 0 2rem 0;
+
 	}
 	&__title{
 		color: $silver;
@@ -18,15 +23,23 @@
 	}
 	&__form-wrapper{
 		flex-grow:1;
+		@include tablet(){
+			padding-bottom: 1.5rem;
+		}
 	}
 	&__form{
 		display: flex;
 		flex-direction:column;
+		@include tablet(){
+			flex-direction:row;
+		}
 	}
 	&__profile-picture{
 		@include profilePicture;
 		margin: 0;
 		margin-right: 1rem;
+		@include tablet(){
+		}
 		&--Mohan{
 			background-image: url('../../assets/images/Mohan-muruge.jpg');
 			background-size: cover;
@@ -38,6 +51,11 @@
 		@include mInputBox(100%,5rem);
 		padding:0.75rem;
 		resize:none;
+		@include tablet(){
+			padding: 0.9rem;
+			height: 3rem;
+			width:27.5rem;
+		}
 	}
 	&__input:focus{
 		outline-color: $brainflixBlue
@@ -49,6 +67,11 @@
 		@include mButton;
 		margin: 1rem 0 1.5rem 0;
 		width:inherit;
+		@include tablet(){
+			width:10rem;
+			height: 3rem;
+			margin:0 2.5rem 0 1rem;
+		}
 	}
 	&__posted-wrapper{
 		@include mTopBorder;
@@ -70,6 +93,7 @@
 		margin:0;
 	}
 	&__comment-post{
+		max-width:39rem;
 	}
 
 
