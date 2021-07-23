@@ -10,6 +10,10 @@
 		margin:0;
 		margin-right:11.25rem;
 	}
+	&__link{
+		text-decoration: none;
+		color:$black;
+	}
 	&__title{
 		@include mLabels();
 		color:$silver;

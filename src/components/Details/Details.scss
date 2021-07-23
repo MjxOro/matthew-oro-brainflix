@@ -1,0 +1,18 @@
+@use '../../partials/variables';
+@use '../../partials/mixins' as *;
+@use '../../partials/globals';
+
+.details{
+	&__info-wrapper{
+	}
+	&__label{
+	}
+	&__input{
+	}
+	&__textarea{
+		width: 18rem;
+		height: 9.563rem;
+
+	}
+}
+

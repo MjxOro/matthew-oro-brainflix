@@ -1,10 +1,16 @@
 import './App.scss';
-import Brainflix from './components/Brainflix/Brainflix';
+import LandingPage from './pages/LandingPage/LandingPage';
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-	  <Brainflix />
+		<BrowserRouter key='AppKey'>
+			<Switch>
+				<Route key='AppKey' path='/:id' exact component={LandingPage} />
+				<Route key='AppKey' path='/'  component={LandingPage} />
+			</Switch>
+		</BrowserRouter>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import './VideoPlayer.scss';
 
-export default function VideoPlayer(props){
+export default function VideoPlayer({data}){
 	return(
 			<article className='video'>
-				<video className='video__player' controls poster={props.data.image} id={props.data.id}></video>
+				<video className='video__player' controls poster={data.image} id={data.id}></video>
 			</article>
 
 	);
