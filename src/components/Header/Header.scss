@@ -84,9 +84,10 @@
 			flex-grow: 1;
 			max-width: 18rem;
 		}
+		&:focus{
+			outline: none;
+			border: 0.125rem solid $brainflixBlue
 	}
-	&__input:focus{
-		outline-color: $brainflixBlue
 	}
 	&__input::placeholder{
 		color:$black;
