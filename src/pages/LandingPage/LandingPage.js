@@ -45,13 +45,10 @@ class Brainflix extends React.Component{
 
 		axios.get(Url + VideoArray + ApiKey)
 		.then(response =>{
-			console.log(UrlIdCheck(this.props.match.url,response.data))
-
 				if(this.props.match.url !== '/'){
 				const getId = UrlIdConverter(this.props.match.url,response.data)
 				axios.get(Url + VideoArray + getId + '/' + ApiKey)
 				.then(response2=>{
-					console.log(response2)
 					this.setState({
 						videoList: response.data,
 						video: response2.data
