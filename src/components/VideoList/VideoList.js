@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import { ArrayFilterList } from '../../javascriptHelper';
 
 export default function VideoList(props){
-	const list = ArrayFilterList(props.data,props.currentId)
+	let list = null
+	if(!ArrayFilterList(props.data,props.match.params.id)){
+		list = ArrayFilterList(props.data,props.data[0].id)
+	}
+	else{
+		list = ArrayFilterList(props.data,props.match.params.id)
+	}
 	return(
 		<section className='list'>
 			<h5 className='list__title'>NEXT VIDEO</h5>

@@ -18,13 +18,18 @@ export const ArrayFilterMain = (arr,id) => {
 }
 
 export const ArrayFilterList = (arr,id) => {
-	const filtered = arr.filter(elem=>elem.id!==id)
-	return filtered;
+	if (!id){
+		return false
+	}
+	else{
+		const filtered = arr.filter(elem=>elem.id!==id)
+		return filtered;
+	}
 }
 
 export const UrlIdCheck = (url,id) =>{
 	const check = url.search(id);
-	return check !== 0 ? true : false 
+	return check > 0 ? true : false 
 }
 export const UrlIdConverter = (url,arr) => {
 	const temp = url.split('').reverse().join('').split('/',1)
