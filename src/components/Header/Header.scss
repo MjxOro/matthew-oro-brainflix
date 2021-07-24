@@ -103,7 +103,22 @@
 			width:12.126rem;
 		}
 	}
-	
+	&__btn-link{
+		text-decoration: none;
+		@include mButton();
+		display:flex;
+		width:77.778%;
+		justify-content: center;
+		align-items: center;
+		&:visited{
+			text-decoration: none;
+		}
+		@include tablet{
+			width:6.813rem;
+			margin: 0 1.5rem;
+		}
+
+	}
 	&__btn{
 		@include mLabels();
 		@include mButton();

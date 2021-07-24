@@ -1,0 +1,14 @@
+@use '../../partials/variables';
+@use '../../partials/mixins' as *;
+@use '../../partials/globals';
+
+.controls{
+	margin: 2rem 1rem;
+
+	&__btn{
+		@include mButton;
+		width:100%;
+	}
+	&__cancel{
+	}
+}

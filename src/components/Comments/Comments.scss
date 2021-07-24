@@ -71,7 +71,7 @@
 		}
 		&::placeholder{
 			color:$black;
-		}
+			}
 	}
 	&__btn{
 		@include mLabels();

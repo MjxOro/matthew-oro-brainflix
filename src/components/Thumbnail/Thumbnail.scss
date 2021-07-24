@@ -1,11 +1,15 @@
 @use '../../partials/variables';
-@use '../../partials/mixns' as *;
+@use '../../partials/mixins' as *;
 @use '../../partials/globals';
 
 .thumbnail{
-	padding: 1rem;
+	margin:0 1rem;
+	border-top: 0.063rem solid $mercury;
+
 	&__img-wrapper{
-		border-top: 0.063rem solid $silver;
+		margin:0;
+		min-width:18rem;
+		min-height:9.563rem;
 	}
 	&__title{
 		margin: 1.5rem 0 2rem 0;
@@ -19,5 +23,8 @@
 		height: 9.563rem;
 	}
 	&__img{
+		border-radius: 0.25rem;
+		width:18rem;
+		height:9.563rem;
 	}
 }

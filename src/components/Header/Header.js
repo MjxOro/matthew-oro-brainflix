@@ -13,10 +13,12 @@ function Header(){
 				<div className='header__form-container'>
 					  <input className='header__input' placeholder='Search' />
 						<div className='header__wrapper'>
-							<button className='header__btn'>
-								<i className='header__btn-icon'></i>
-								UPLOAD
-							</button>
+							<Link to='/upload' className='header__btn-link'>
+								<button className='header__btn'>
+									<i className='header__btn-icon'></i>
+									UPLOAD
+								</button>
+							</Link>
 							<figure className='header__profile-picture'></figure>
 						</div>
 				</div>

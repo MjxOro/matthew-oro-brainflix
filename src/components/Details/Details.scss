@@ -3,16 +3,25 @@
 @use '../../partials/globals';
 
 .details{
-	&__info-wrapper{
-	}
+	margin: 2rem 1rem;
 	&__label{
+		display:block;
 	}
 	&__input{
+		@include mInputBox(100%,3rem);
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+		&::placeholder{
+			color:$black;
+		}
 	}
 	&__textarea{
-		width: 18rem;
-		height: 9.563rem;
-
+		@include mInputBox(100%,8.938rem);
+		padding: 1rem;
+		resize: none;
+		&::placeholder{
+			color:$black;
+		}
 	}
 }
 
