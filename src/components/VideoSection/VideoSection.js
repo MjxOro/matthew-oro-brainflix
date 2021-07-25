@@ -3,7 +3,7 @@ import Comments from '../Comments/Comments';
 import { DateConverter } from '../../javascriptHelper';
 
 
-export default function VideoSection({data}){
+export default function VideoSection({data , handler}){
 	return(
 		<article className='video-info'>
 			<div className='video-info__wrapper'>
@@ -22,7 +22,7 @@ export default function VideoSection({data}){
 				</div>
 			</div>
 			<div className='video-info__description'>{data.description}</div>
-			<Comments key={data.id} data={data.comments}  />
+			<Comments key={data.id} data={data} handler={handler} />
 		</article>
 	);
 

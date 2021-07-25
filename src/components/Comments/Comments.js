@@ -1,22 +1,24 @@
 import './Comments.scss';
-import { DateConverter } from '../../javascriptHelper';
+import { DateConverter,SortTimestamp } from '../../javascriptHelper';
 
-export default function Comments({data}){
+
+export default function Comments({data,handler}){
+	let comment = data.comments
 	return(
 		<section className='comment'>
-			<h3 className='comment__header'>{(data.length) + ' Comments'}</h3>
+			<h3 className='comment__header'>{(comment.length) + ' Comments'}</h3>
 			<p className='comment__title'>JOIN THE CONVRSATION</p>
 			<div className='comment__post-wrapper'>
 				<div className='comment__profile-picture comment__profile-picture--Mohan'></div>
 				<div className='comment__form-wrapper'>
-					<form className='comment__form'>
-						<textarea placeholder='Write comment here' className='comment__input'></textarea>
+					<form onSubmit={handler} className='comment__form'>
+						<textarea name='postComment' placeholder='Write comment here' className='comment__input'></textarea>
 						<button className='comment__btn'>COMMENT</button>
 					</form>
 				</div>
 			</div>
 			{
-				data.map(elem =>{
+				comment.sort(SortTimestamp).map(elem =>{
 					return(
 						<div className='comment__posted-wrapper' id={elem.id}>	
 							<div className='comment__profile-picture'></div>

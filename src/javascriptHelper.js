@@ -1,3 +1,4 @@
+
 export const DateConverter = (unixTime) =>{
 	let t = new Date(unixTime);
 	let y = t.getFullYear();
@@ -40,5 +41,13 @@ export const UrlIdConverter = (url,arr) => {
 	}
 	else {
 		return Obj.id
+	}
+}
+export function SortTimestamp(a,b){
+	if ( a.timestamp < b.timestamp ){
+		return -1;
+	}
+	if ( a.timestamp > b.timestamp ){
+		return 1;
 	}
 }
