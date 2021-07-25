@@ -4,11 +4,38 @@
 
 .controls{
 	margin: 2rem 1rem;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include tablet(){
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		padding-top: 2.5rem;
+		border-top: 0.063rem solid $mercury;
+	}
+	@include desktop(){
+		margin: 0;
+		margin: 0 11.25rem;
+	}
 
 	&__btn{
 		@include mButton;
-		width:100%;
+		width: 18rem;
+		@include tablet(){
+			width:10rem;
+		}
 	}
 	&__cancel{
+		font-weight: 600;
+		@include mLabels();
+		margin: 1.5rem 0;
+		color: $brainflixBlue;
+		@include tablet(){
+			@include dtLabels;
+			margin-right:3rem;
+		}
+		@include desktop(){
+		}
 	}
 }

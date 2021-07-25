@@ -1,16 +1,40 @@
 @use '../../partials/variables';
 @use '../../partials/mixins' as *;
 @use '../../partials/globals';
+@use '../../partials/fonts';
 
 .details{
 	margin: 2rem 1rem;
+	@include tablet(){
+		margin: 2.5rem 1.5rem;
+	}
+	@include desktop(){
+		margin: 0;
+		margin: 2.5rem 0;
+		flex-grow: 1;
+	}
 	&__label{
+		color: $silver;
+		font-weight: 600;
 		display:block;
+		@include mLabels();
+		@include tablet(){
+			@include dtLabels();
+		}
+		@include desktop(){
+		}
 	}
 	&__input{
 		@include mInputBox(100%,3rem);
 		padding: 1rem;
 		margin-bottom: 1.5rem;
+		@include tablet(){
+		}
+		@include desktop(){
+			margin: 0;
+			width: 100%;
+			margin-bottom: 1.5rem;
+		}
 		&::placeholder{
 			color:$black;
 		}
@@ -19,6 +43,11 @@
 		@include mInputBox(100%,8.938rem);
 		padding: 1rem;
 		resize: none;
+		@include tablet(){
+		}
+		@include desktop(){
+			height: 5.875rem;
+		}
 		&::placeholder{
 			color:$black;
 		}

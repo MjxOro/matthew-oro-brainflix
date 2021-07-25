@@ -18,14 +18,19 @@ export default class UploadPage extends React.Component{
 	render = () => {
 		return(
 			<>
-			<Header />
-				<form>
-					<div>
-						<Thumbnail />
-						<Details />
+				<Header />
+				<section className='uploadPage'>
+					<div className='uploadPage__title-wrapper'>
+						<h1 className='uploadPage__title'>Upload Video</h1>
 					</div>
-					<Controls />
-				</form>
+						<form>
+							<div className='uploadPage__wrapper'>
+								<Thumbnail />
+								<Details />
+							</div>
+							<Controls />
+						</form>
+				</section>
 			</>
 		)
 	}

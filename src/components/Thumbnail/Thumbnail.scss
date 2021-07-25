@@ -4,27 +4,45 @@
 
 .thumbnail{
 	margin:0 1rem;
-	border-top: 0.063rem solid $mercury;
-
-	&__img-wrapper{
-		margin:0;
-		min-width:18rem;
-		min-height:9.563rem;
+	@include tablet(){
+		margin: 0 1.5rem;
 	}
-	&__title{
-		margin: 1.5rem 0 2rem 0;
+	@include desktop(){
+		border: none;
+		margin: 0;
+		margin-right: 1.5rem;
 
 	}
+
 	&__label{
-		color: $mercury; 
+		display:block;
+		font-weight: 600;
+		color: $silver; 
+		@include mLabels();
+		@include tablet(){
+			@include dtLabels();
+			margin-top: 2.5rem;
+		}
+		@include desktop(){
+			margin: 0;
+		}
 	} 
 	&__img-wrapper{
 		width: 18rem;
 		height: 9.563rem;
+		margin:0;
+		@include tablet(){
+			width:21.5rem;
+			height:11.438rem;
+		}
+		@include desktop(){
+		}
 	}
 	&__img{
 		border-radius: 0.25rem;
-		width:18rem;
-		height:9.563rem;
+		width: inherit;
+		height: inherit;
+		@include tablet(){
+		}
 	}
 }

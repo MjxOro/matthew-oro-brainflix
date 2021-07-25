@@ -1,0 +1,35 @@
+@use '../../partials/variables';
+@use '../../partials/mixins' as *;
+@use '../../partials/globals';
+
+.uploadPage{
+	@include tablet(){
+	border-top: 0.063rem solid $mercury;
+	}
+	&__title-wrapper{
+		@include mHeader();
+		margin:0 1rem;
+		padding: 1.5rem 0 2rem 0;
+		@include tablet(){
+			@include dtHeader2();
+			margin:0 1.5rem;
+			padding: 3rem 0 2rem 0;
+		}
+		@include desktop(){
+			margin: 0 11.25rem;
+		}
+	}
+	&__title{
+		margin:0;
+		@include tablet(){
+		}
+	}
+	&__wrapper{
+		@include desktop(){
+		display: flex;
+		align-items: center;
+		border-top: 0.063rem solid $mercury;
+		margin: 0 11.25rem;
+		}
+	}
+}
