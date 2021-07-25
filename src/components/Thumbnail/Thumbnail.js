@@ -5,7 +5,7 @@ export default function Thumbnail(props){
 		<article className='thumbnail'>
 			<label className='thumbnail__label'>VIDEO THUMBNAIL</label>
 			<figure className='thumbnail__img-wrapper'>
-				<img className='thumbnail__img' src={ThumbnailImg}/>
+				<img className='thumbnail__img' src={ThumbnailImg} alt='Upload Thumbnail'/>
 			</figure>
 		</article>
 	)
