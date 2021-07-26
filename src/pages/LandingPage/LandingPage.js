@@ -22,6 +22,7 @@ class Brainflix extends React.Component{
 				const getId = UrlIdConverter(this.props.match.url,this.state.videoList)
 
 				if(this.props.match.url !== '/'){
+					videoSource.load();
 					axios.get(Url + VideoArray + getId + '/' + ApiKey)
 					.then(response2=>{
 						this.setState({
@@ -33,6 +34,7 @@ class Brainflix extends React.Component{
 					})
 				}
 				else{
+					videoSource.load();
 					axios.get(Url + VideoArray + this.state.videoList[0].id + '/' + ApiKey)
 					.then(response2=>{
 						this.setState({
@@ -45,7 +47,6 @@ class Brainflix extends React.Component{
 				}
 				window.scrollTo(0, 0)
 			}
-				videoSource.load();
 			
 	}
 	_handleDelete = (event) =>{

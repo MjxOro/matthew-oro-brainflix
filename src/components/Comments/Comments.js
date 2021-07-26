@@ -22,7 +22,7 @@ export default function Comments({data,handler,deleteClick}){
 					return(
 						<form onSubmit={deleteClick} className='comment__form-delete'>
 							<div  className='comment__posted-wrapper' id={elem.id}>	
-						{ index>2 ? <div className='comment__profile-picture comment__profile-picture--Mohan'></div> : <div className='comment__profile-picture'></div>}
+						{ elem.timestamp>(1609488000*1000) ? <div className='comment__profile-picture comment__profile-picture--Mohan'></div> : <div className='comment__profile-picture'></div>}
 								<div className='comment__info-wrapper'>
 									<div className='comment__top-wrapper'>
 										<h3 className='comment__username'>{elem.name}</h3>
