@@ -17,6 +17,7 @@ class Brainflix extends React.Component{
 
 	}
 	componentDidUpdate = ({match} , prevState) => {
+			let videoSource = document.querySelector('.video__player')
 			if(match.url !== this.props.match.url ) {
 				const getId = UrlIdConverter(this.props.match.url,this.state.videoList)
 
@@ -44,6 +45,7 @@ class Brainflix extends React.Component{
 				}
 				window.scrollTo(0, 0)
 			}
+				videoSource.load();
 			
 	}
 	_handleDelete = (event) =>{
@@ -149,10 +151,10 @@ _handleOnSubmit = (event) =>{
 				<div className='component'>
 					<VideoSection key={this.state.curentId}  data={this.state.video} handler={this._handleOnSubmit} deleteClick={this._handleDelete} />
 					<Switch>
-					<Route key='uniqueKey1' path='/:id' render ={(routerProps)=>
+					<Route key='uniqueKey1' exact path='/:id' render ={(routerProps)=>
 						<VideoList key={this.state.currentId} data={this.state.videoList} {...routerProps} />
 					} />
-					<Route key='uniqueKey2' path='/' render ={(routerProps)=>
+					<Route key='uniqueKey2' exact  path='/' render ={(routerProps)=>
 						<VideoList key={this.state.currentId} data={this.state.videoList} {...routerProps} />
 					} />
 					</Switch>

@@ -2,6 +2,7 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/globals';
 @use '../../partials/fonts';
+@use '../../partials/animations';
 
 .details{
 	margin: 2rem 1rem;
@@ -35,6 +36,16 @@
 			width: 100%;
 			margin-bottom: 1.5rem;
 		}
+		&--error{
+			border: 0.125rem solid red;
+			animation-name: inputWrong;
+			animation-duration: 550ms;
+			animation-timing-function: ease-in;
+		}
+		&:focus{
+			outline: none;
+			border: 0.125rem solid $brainflixBlue
+		}
 		&::placeholder{
 			color:$black;
 		}
@@ -47,6 +58,16 @@
 		}
 		@include desktop(){
 			height: 5.875rem;
+		}
+		&--error{
+			border: 0.125rem solid red;
+			animation-name: inputWrong;
+			animation-duration: 550ms;
+			animation-timing-function: ease-in;
+		}
+		&:focus{
+			outline: none;
+			border: 0.125rem solid $brainflixBlue
 		}
 		&::placeholder{
 			color:$black;
