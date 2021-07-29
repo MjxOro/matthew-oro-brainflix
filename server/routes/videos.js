@@ -5,7 +5,7 @@ const fs = require('fs')
 router.get('/',(req,res) =>{
 	//VideoList
 })
-router.get('/:id',(req,res) =>{
+router.get('/:id/?',(req,res) =>{
 	//VideoPlayer
 	//VideoSection
 })

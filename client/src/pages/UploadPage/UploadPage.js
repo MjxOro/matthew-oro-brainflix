@@ -7,11 +7,14 @@ import Controls from '../../components/Controls/Controls';
 
 export default class UploadPage extends React.Component{
 	state = {
-		upload: []
-	}
-	componentDidUpdate = (prevProps, prevState) => {
+		image: null,
+		title: null,
+		description: null,
+		err: false
 	}
 	componentDidMount = () => {
+	}
+	componentDidUpdate = (prevProps, prevState) => {
 	}
 
 	_handleOnSubmit = (event) =>{

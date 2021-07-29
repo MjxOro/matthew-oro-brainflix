@@ -2,7 +2,7 @@ import './Comments.scss';
 import { DateConverter,SortTimestamp } from '../../javascriptHelper';
 
 
-export default function Comments({data,handler,deleteClick}){
+export default function Comments({data,handler,deleteClick,checkErr}){
 	let comment = data.comments
 	return(
 		<section className='comment'>
@@ -12,7 +12,7 @@ export default function Comments({data,handler,deleteClick}){
 				<div className='comment__profile-picture comment__profile-picture--Mohan'></div>
 				<div className='comment__form-wrapper'>
 					<form onSubmit={handler} className='comment__form'>
-						<textarea name='postComment' placeholder='Write comment here' className='comment__input'></textarea>
+					{ checkErr ? <textarea name='postComment' placeholder='Write comment here' className='comment__input comment__input--error' ></textarea> : <textarea name='postComment' placeholder='Write comment here' className='comment__input' ></textarea>}
 						<button className='comment__btn'>COMMENT</button>
 					</form>
 				</div>
