@@ -17,11 +17,11 @@ class Brainflix extends React.Component{
 	}
 
 	componentDidMount = () =>{
-		axios.get(Url+VideoArray+ApiKey)
+		axios.get(Url+VideoArray)
 		.then(({data}) =>{
 			this.setState({videoList: data})
 			let filter = data.find(elem => {return elem.id === this.props.match.params.id})
-			return filter ? axios.get(`${Url + VideoArray + filter.id}/${ApiKey}`) : axios.get(`${Url + VideoArray + data[0].id}/${ApiKey}`)
+			return filter ? axios.get(`${Url + VideoArray + filter.id}`) : axios.get(`${Url + VideoArray + data[0].id}`)
 		})
 		.then(({data}) =>{
 			this.setState({video: data})
@@ -34,7 +34,7 @@ class Brainflix extends React.Component{
 	componentDidUpdate = ({match}) => {
 			if(this.props.match.params.id !== match.params.id){
 				if(this.props.match.url === '/'){
-					axios.get(`${Url + VideoArray + this.state.videoList[0].id}/${ApiKey}`)
+					axios.get(`${Url + VideoArray + this.state.videoList[0].id}`)
 					.then(({data}) =>{
 						this.setState({video: data})
 					})
@@ -43,7 +43,7 @@ class Brainflix extends React.Component{
 					})
 				}
 				else{
-					axios.get(`${Url + VideoArray + this.props.match.params.id}/${ApiKey}`)
+					axios.get(`${Url + VideoArray + this.props.match.params.id}`)
 					.then(({data}) =>{
 						this.setState({video: data})
 					})
@@ -57,10 +57,11 @@ class Brainflix extends React.Component{
 	handleDelete = (event) =>{
 		event.preventDefault();
 		const commentId = event.target.firstChild.id
-		axios.delete(Url+ VideoArray + this.state.video.id + '/comments/' + commentId + '/' + ApiKey)
+		axios.delete(Url+ VideoArray + this.state.video.id + '/comments/' + commentId)
 		.then(response =>{
-			return axios.get(Url+ VideoArray + this.state.video.id + '/' + ApiKey)
+			return axios.get(Url+ VideoArray + this.state.video.id)
 			.then(({data}) =>{
+				console.log(response)
 				this.setState({video: data})
 			})
 		})
@@ -81,11 +82,11 @@ handleOnSubmit = (event) =>{
 	else{
 		let eventObj = {
 			name: 'Mohan Muruge',
-			comment: form.postComment.value
+			comment: form.postComment.value,
 		}
-		axios.post(Url+ VideoArray + this.state.video.id + '/comments/' + ApiKey,eventObj)
+		axios.post(Url+ VideoArray + this.state.video.id + '/comments',eventObj)
 		.then(response =>{
-			return axios.get(Url+ VideoArray + this.state.video.id + '/' + ApiKey)
+			return axios.get(Url+ VideoArray + this.state.video.id)
 		})
 		.then(({data}) =>{
 			this.setState({video: data})
@@ -103,6 +104,7 @@ handleOnSubmit = (event) =>{
 			<>
 			{ this.state.videoList && this.state.video   && (
 			<>
+				//FIX ROUTING
 				<Route key='uniqueKey' path='/' component={Header}  />
 				<Route key='uniqueKey1'  path='/' render ={(routerProps)=>
 				<VideoPlayer key={this.state.curentId} data={this.state.video} {...routerProps} />
