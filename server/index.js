@@ -15,7 +15,7 @@ app.use((req,res,next) =>{
 	next();
 })
 
-app.use('/videos',videoRoutes) //Load Videos and Post videos
+app.use('/videos',videoRoutes) 
 app.use('/videos',commentRoutes)
 
 app.get('/',(req,res) =>{

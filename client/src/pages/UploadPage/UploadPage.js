@@ -15,7 +15,7 @@ export default class UploadPage extends React.Component{
 	componentDidUpdate = (prevProps, prevState) => {
 	}
 
-	_handleOnSubmit = (event) =>{
+	handleOnSubmit = (event) =>{
 		const form = event.target
 		event.preventDefault();
 		if(!form.inputTitle.value || !form.inputDescription.value){
@@ -41,13 +41,12 @@ export default class UploadPage extends React.Component{
 				title: form.inputTitle.value,
 				description: form.inputDescription.value
 			}
-			axios.post(process.env.Url,eventObj)
+			axios.post(process.env.REACT_APP_URL,eventObj)
 			.then(response =>{
 				console.log(response)
 			})
 			alert('Video is now uploading/uploaded')
 			this.props.history.goBack()
-			
 		}
 	}
 	render = () => {
@@ -58,7 +57,7 @@ export default class UploadPage extends React.Component{
 					<div className='uploadPage__title-wrapper'>
 						<h1 className='uploadPage__title'>Upload Video</h1>
 					</div>
-						<form onSubmit={this._handleOnSubmit}>
+						<form onSubmit={this.handleOnSubmit}>
 							<div className='uploadPage__wrapper'>
 								<Thumbnail />
 								<Details />
