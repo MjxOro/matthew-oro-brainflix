@@ -4,12 +4,10 @@ import Header from '../../components/Header/Header';
 import Thumbnail from '../../components/Thumbnail/Thumbnail';
 import Details from '../../components/Details/Details';
 import Controls from '../../components/Controls/Controls';
+import axios from 'axios'
 
 export default class UploadPage extends React.Component{
 	state = {
-		image: null,
-		title: null,
-		description: null,
 		err: false
 	}
 	componentDidMount = () => {
@@ -43,9 +41,12 @@ export default class UploadPage extends React.Component{
 				title: form.inputTitle.value,
 				description: form.inputDescription.value
 			}
-			this.setState({upload: [...this.state.upload,eventObj]})
+			axios.post(process.env.Url,eventObj)
+			.then(response =>{
+				console.log(response)
+			})
 			alert('Video is now uploading/uploaded')
-			window.location.assign('/')
+			this.props.history.goBack()
 			
 		}
 	}

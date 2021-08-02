@@ -6,9 +6,8 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoList from '../../components/VideoList/VideoList';
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios';
-import { Url,ApiKey,VideoArray} from '../../apiKey';
 
-class Brainflix extends React.Component{
+class LandingPage extends React.Component{
 
 	state = {
 		video: null,
@@ -17,11 +16,11 @@ class Brainflix extends React.Component{
 	}
 
 	componentDidMount = () =>{
-		axios.get(Url+VideoArray)
+		axios.get(process.env.REACT_APP_URL)
 		.then(({data}) =>{
 			this.setState({videoList: data})
 			let filter = data.find(elem => {return elem.id === this.props.match.params.id})
-			return filter ? axios.get(`${Url + VideoArray + filter.id}`) : axios.get(`${Url + VideoArray + data[0].id}`)
+			return filter ? axios.get(`${process.env.REACT_APP_URL + filter.id}`) : axios.get(`${process.env.REACT_APP_URL + data[0].id}`)
 		})
 		.then(({data}) =>{
 			this.setState({video: data})
@@ -34,7 +33,7 @@ class Brainflix extends React.Component{
 	componentDidUpdate = ({match}) => {
 			if(this.props.match.params.id !== match.params.id){
 				if(this.props.match.url === '/'){
-					axios.get(`${Url + VideoArray + this.state.videoList[0].id}`)
+					axios.get(`${process.env.REACT_APP_URL + this.state.videoList[0].id}`)
 					.then(({data}) =>{
 						this.setState({video: data})
 					})
@@ -43,7 +42,7 @@ class Brainflix extends React.Component{
 					})
 				}
 				else{
-					axios.get(`${Url + VideoArray + this.props.match.params.id}`)
+					axios.get(`${process.env.REACT_APP_URL + this.props.match.params.id}`)
 					.then(({data}) =>{
 						this.setState({video: data})
 					})
@@ -57,9 +56,9 @@ class Brainflix extends React.Component{
 	handleDelete = (event) =>{
 		event.preventDefault();
 		const commentId = event.target.firstChild.id
-		axios.delete(Url+ VideoArray + this.state.video.id + '/comments/' + commentId)
+		axios.delete(process.env.REACT_APP_URL + this.state.video.id + '/comments/' + commentId)
 		.then(response =>{
-			return axios.get(Url+ VideoArray + this.state.video.id)
+			return axios.get(process.env.REACT_APP_URL + this.state.video.id)
 			.then(({data}) =>{
 				console.log(response)
 				this.setState({video: data})
@@ -84,9 +83,9 @@ handleOnSubmit = (event) =>{
 			name: 'Mohan Muruge',
 			comment: form.postComment.value,
 		}
-		axios.post(Url+ VideoArray + this.state.video.id + '/comments',eventObj)
+		axios.post(process.env.REACT_APP_URL + this.state.video.id + '/comments',eventObj)
 		.then(response =>{
-			return axios.get(Url+ VideoArray + this.state.video.id)
+			return axios.get(process.env.REACT_APP_URL + this.state.video.id)
 		})
 		.then(({data}) =>{
 			this.setState({video: data})
@@ -104,8 +103,7 @@ handleOnSubmit = (event) =>{
 			<>
 			{ this.state.videoList && this.state.video   && (
 			<>
-				//FIX ROUTING
-				<Route key='uniqueKey' path='/' component={Header}  />
+				<Header />
 				<Route key='uniqueKey1'  path='/' render ={(routerProps)=>
 				<VideoPlayer key={this.state.curentId} data={this.state.video} {...routerProps} />
 					} />
@@ -126,4 +124,4 @@ handleOnSubmit = (event) =>{
 		);
 	}
 }
-export default Brainflix;
+export default LandingPage;
