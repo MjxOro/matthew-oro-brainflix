@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.static('./public'))
 const PORT = 8080;
 const videoRoutes = require('./routes/videoRoutes')
 const commentRoutes = require('./routes/commentRoutes')
